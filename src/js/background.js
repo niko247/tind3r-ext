@@ -5,7 +5,7 @@ import requestManager from './app/request-manager'
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.tabs.create({
-    url: 'https://tind3r.com'
+    url: 'http://localhost:3005'
   })
 })
 
@@ -14,6 +14,7 @@ const setHeaders = (callback, host) => {
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+
   if (request.type === 'FACEBOOK_RCV_TOKEN') {
     console.log(request);
 
@@ -21,6 +22,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse()
     })
     return true
+  }
+  if (request.type === 'CLOSE_TAB') {
+    console.log('Closing window')
+    Facebook.closeTab()
   }
 })
 
@@ -53,7 +58,6 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
     case 'FACEBOOK_TOKEN':
       Facebook.openTab()
       break;
-
     case 'PURGE':
       Tinder.purge()
       break;
@@ -78,7 +82,7 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
 
 chrome.runtime.onInstalled.addListener(function listener(details) {
   if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.tabs.create({url: "https://tind3r.com/"});
+    chrome.tabs.create({url: "http://localhost:3005/"});
     chrome.runtime.onInstalled.removeListener(listener);
   }
 });

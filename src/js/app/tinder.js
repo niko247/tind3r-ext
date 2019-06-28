@@ -36,8 +36,7 @@ const Tinder = {
   auth(fbToken) {
     return new Promise((resolve) => {
       requestManager.auth(fbToken).then(({ data }) => {
-        const token = data.token
-
+        const token = data.data.api_token;
         localStorage.setItem('tinder-token', token)
         localStorage.setItem('token-date', new Date().toISOString())
         resolve()

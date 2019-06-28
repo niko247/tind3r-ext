@@ -28,7 +28,7 @@ export default {
   auth(facebook_token) {
     console.log(config);
 
-    return axios.post(config.baseURL + '/auth', { facebook_token })
+    return axios.post(config.baseURL + 'v2/auth/login/facebook', { token: facebook_token })
   },
 
   get(url, params = {}) {
