@@ -4,7 +4,10 @@ let config = {}
 
 let instance = axios.create(config)
 
-const token = () => localStorage.getItem('tinder-token')
+const token = () => {
+  let tokenTinder = localStorage.getItem('tinder-token');
+  return tokenTinder === null ? '' : tokenTinder;
+}
 
 const tokenInstance = () => axios.create({
   ...config,

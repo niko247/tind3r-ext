@@ -55,8 +55,12 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
       sendResponse(Tinder.tokenDate())
       break;
 
+    case 'SAVE_SMS_TOKEN':
+      Tinder.authSmsToken(request.token);
+      sendResponse();
+      break;
     case 'FACEBOOK_TOKEN':
-      Facebook.openTab()
+      Facebook.openTab();
       break;
     case 'PURGE':
       Tinder.purge()

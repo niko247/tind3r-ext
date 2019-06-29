@@ -44,6 +44,12 @@ const Tinder = {
     })
   },
 
+  authSmsToken(smsToken) {
+    console.log('In extension saving smsToken:' + smsToken);
+    localStorage.setItem('tinder-token', smsToken);
+    localStorage.setItem('token-date', new Date().toISOString())
+  },
+
   tokenDate() {
     return localStorage.getItem('token-date')
   },
