@@ -28,3 +28,13 @@ Now, the content of `build` folder will be the extension ready to be submitted t
 
 -------------
 Rafał Leśniak
+
+
+##Updates from niko247
+change version in package.json and
+run: 
+```
+npm run build
+```
+This will create zip of extension inside build-zip folder which you should copy in server project.
+In server project update version in src/const/index.js
