@@ -1,6 +1,6 @@
 {
   "name": "love-web",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "description": "Find love through internet",
   "scripts": {
     "build": "cross-env NODE_ENV=production node utils/build.js && npm run zip",
