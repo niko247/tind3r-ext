@@ -11,7 +11,7 @@ const readyStateCheckInterval = setInterval(() => {
     document.title = 'Tind3r - refresh token FB'
     const selector = document.querySelectorAll(['[name="fb_dtsg"]'])[0];
     const code = (selector || {}).value
-
+    console.log("Complete")
     if (!code || !selector) {
       const token = jQuery('head').text().match(/access_token=([\w_]+)&/i)
       clearInterval(readyStateCheckInterval)

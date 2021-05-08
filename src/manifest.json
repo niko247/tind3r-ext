@@ -25,11 +25,11 @@
       "matches": [
         "https://www.facebook.com/login.php?skip_api_login*",
         "https://facebook.com/login.php?skip_api_login*",
-        "https://facebook.com/v3.2/dialog/oauth*",
-        "https://www.facebook.com/v3.2/dialog/oauth*",
-        "https://web.facebook.com/v3.2/dialog/oauth*",
-        "https://www.web.facebook.com/v3.2/dialog/oauth*",
-        "https://www.facebook.com/v3.2/dialog/oauth*"
+        "https://facebook.com/v10.0/dialog/oauth*",
+        "https://www.facebook.com/v10.0/dialog/oauth*",
+        "https://web.facebook.com/v10.0/dialog/oauth*",
+        "https://www.web.facebook.com/v10.0/dialog/oauth*",
+        "https://www.facebook.com/v10.0/dialog/oauth*"
       ],
       "run_at": "document_start"
     },
